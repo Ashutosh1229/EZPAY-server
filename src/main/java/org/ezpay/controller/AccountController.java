@@ -16,7 +16,7 @@ import static org.ezpay.helper.Contants.*;
 public class AccountController {
     @Autowired
     private AccountService accountService;
-    @GetMapping("/get/all")
+    @GetMapping("/all")
     public ResponseEntity<Object> allAccounts(){
         try {
             List<Account> res = accountService.getAllAccounts();
@@ -27,7 +27,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ERROR_MESSAGE+": "+e);
         }
     }
-    @GetMapping("/get/account")
+    @GetMapping("/account")
     public ResponseEntity<Object> getAccount(@RequestParam(name = "accountId") String id){
         try {
             Account res = accountService.getAccountDetail(id);
@@ -38,7 +38,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ERROR_MESSAGE+": "+e);
         }
     }
-    @GetMapping("/get/userAccount")
+    @GetMapping("/userAccount")
     public ResponseEntity<Object> getUserAccounts(@RequestParam(name = "userId") String userId){
         try {
             List<Account> res = accountService.getUserAccounts(userId);
