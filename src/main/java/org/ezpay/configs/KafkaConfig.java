@@ -1,4 +1,4 @@
-package org.ezpay.kafka;
+package org.ezpay.configs;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
